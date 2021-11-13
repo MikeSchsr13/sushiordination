@@ -107,10 +107,6 @@ td {
     /* background-color: yellow; */
 }
 
-.container-btn-add {
-    /* background-color: green; */
-}
-
 .container-btn-rem {
     /* background-color: #fff; */
     opacity: 0;
@@ -156,8 +152,18 @@ input,
     background-color: #00bfa5;
 }
 
+.btn-add:active {
+    background-color: #1de9b6;
+    transition: 100ms;
+}
+
 .btn-rem {
     background-color: #ef5350;
+}
+
+.btn-rem:active {
+    background-color: #e57373;
+    transition: 100ms;
 }
 
 .show {
