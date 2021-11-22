@@ -34,17 +34,17 @@
 
     <!-- AREA BOTTONI -->
     <div class="section-container-buttons">
-        <!-- <div id="container-buttons" class="container-buttons"> -->
-        <div id="container-input" class="container-input">
-            <input type="number" id="text" placeholder="Numero">
+        <div id="container-buttons" class="container-buttons">
+            <div id="container-input" class="container-input">
+                <input type="number" id="text" placeholder="Numero">
+            </div>
+            <div id="container-btn-add" class="container-btn-add">
+                <button id="btn-add" class="btn-add" type="button" onclick="aggiungi()">Aggiungi</button>
+            </div>
+            <div id="container-btn-rem" class="container-btn-rem">
+                <button class="btn-rem" type="button" onclick="elimina()">Rimuovi</button>
+            </div>
         </div>
-        <div id="container-btn-add" class="container-btn-add">
-            <button id="btn-add" class="btn-add" type="button" onclick="aggiungi()">Aggiungi</button>
-        </div>
-        <div id="container-btn-rem" class="container-btn-rem">
-            <button class="btn-rem" type="button" onclick="elimina()">Rimuovi</button>
-        </div>
-        <!-- </div> -->
     </div>
 
     <script>
@@ -101,7 +101,7 @@
                         // animazione bottoni
                         document.getElementById("container-btn-add").style.width = "calc(100%/3)";
                         document.getElementById("container-input").style.width = "calc(100%/3)";
-                        document.getElementById("container-buttons").style.width = "90%";
+                        // document.getElementById("container-buttons").style.width = "90%";
                     }
                 }
             }
@@ -145,7 +145,7 @@
                     setTimeout(() => {
                         document.getElementById("container-btn-add").style.width = "calc(100%/2)";
                         document.getElementById("container-input").style.width = "calc(100%/2)";
-                        document.getElementById("container-buttons").style.width = "60%";
+                        // document.getElementById("container-buttons").style.width = "60%";
                     }, 300);
                 }
             }
