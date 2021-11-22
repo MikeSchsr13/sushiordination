@@ -15,7 +15,7 @@
     <main>
         <header>
             <div class="container-title">
-                <h1>SUSHI <br> ORDINATION</h1>
+                <p class="title">Sushi <br> Ordination</p>
             </div>
         </header>
 
@@ -34,27 +34,33 @@
 
     <!-- AREA BOTTONI -->
     <div class="section-container-buttons">
-        <div id="container-buttons" class="container-buttons">
-            <div id="container-input" class="container-input">
-                <input type="number" id="text" placeholder="Numero">
-            </div>
-            <div id="container-btn-add" class="container-btn-add">
-                <button id="btn-add" class="btn-add" type="button" onclick="aggiungi()">Aggiungi</button>
-            </div>
-            <div id="container-btn-rem" class="container-btn-rem">
-                <button class="btn-rem" type="button" onclick="elimina()">Rimuovi</button>
-            </div>
+        <!-- <div id="container-buttons" class="container-buttons"> -->
+        <div id="container-input" class="container-input">
+            <input type="number" id="text" placeholder="Numero">
         </div>
+        <div id="container-btn-add" class="container-btn-add">
+            <button id="btn-add" class="btn-add" type="button" onclick="aggiungi()">Aggiungi</button>
+        </div>
+        <div id="container-btn-rem" class="container-btn-rem">
+            <button class="btn-rem" type="button" onclick="elimina()">Rimuovi</button>
+        </div>
+        <!-- </div> -->
     </div>
 
     <script>
         // controlla che input abbia strettamente un numero al suo interno
         function checkText() {
-            var text = document.getElementById("text").value;
-            if (text != "")
-                return 1;
+            var input = document.getElementById("text");
+            if (input.value != "") {
+                if (input.value <= 0)
+                    alert("Il numero deve essere maggiore di 0");
+                else
+                    return 1;
+            }
             else {
                 alert("Inserisci un numero 😬");
+                input.focus();
+                input.value = "";
                 return 0;
             }
         }
@@ -88,7 +94,7 @@
                     // se c'è almeno una riga con dei numeri allora mostra la tabella e il bottone rimuovi 
                     if (i == 1) {
                         //mostro la tabella e il bottone rimuovi se esiste almeno una riga + gestione animazione con timer
-                        document.getElementById("container-table").classList.add("show");
+                        // document.getElementById("container-table").classList.add("show");
                         setTimeout(() => {
                             document.getElementById("container-btn-rem").classList.add("show"); // mostra btn-rem
                         }, 300);
@@ -134,7 +140,7 @@
                 var i = table.rows.length;
                 if (i == 1) {
                     // nascondo la tabella e il bottone rimuovi se non esiste nessun elemento nella tabella
-                    document.getElementById("container-table").classList.remove("show")
+                    // document.getElementById("container-table").classList.remove("show")
                     document.getElementById("container-btn-rem").classList.remove("show");
                     setTimeout(() => {
                         document.getElementById("container-btn-add").style.width = "calc(100%/2)";
