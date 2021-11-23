@@ -37,13 +37,13 @@
     <div id="container-buttons" class="container-buttons">
 
       <div id="container-btn-add" class="container-btn-add">
-        <button id="btn-add" class="btn-add" type="button" onclick="aggiungi()">Aggiungi</button>
+        <button id="btn-add" class="btn-add" type="submit" onclick="aggiungi()">Aggiungi</button>
       </div>
       <div id="container-input" class="container-input">
         <input type="number" id="text" placeholder="Numero">
       </div>
       <div id="container-btn-rem" class="container-btn-rem hide">
-        <button class="btn-rem" type="button" onclick="elimina()">Rimuovi</button>
+        <button class="btn-rem" type="submit" onclick="elimina()">Rimuovi</button>
       </div>
 
     </div>
@@ -72,7 +72,7 @@
     function aggiungi() {
       if (checkText()) {
         var table = document.getElementById("table");
-        var input = document.getElementById("text").value;
+        var input = document.getElementById("text");
         var check = false;
 
         // controlla che il numero sia nella tabella per incrementarlo altrimenti esce e lo aggiunge alla tabella
@@ -80,9 +80,11 @@
           var cellNum = table.rows[j].cells[0]; // preleva il numero dalla tabella
           var cellQua = table.rows[j].cells[1]; // preleva la quantità dalla tabella
 
-          if (cellNum.innerHTML == input) {
+          if (cellNum.innerHTML == input.value) {
             ++cellQua.innerHTML;
             check = true;
+            input.focus();
+            input.value = "";
           }
         }
 
@@ -90,8 +92,11 @@
         if (!check) {
           var i = table.rows.length; // preleva il numero di righe della tabella
           var row = table.insertRow(i);
-          var cellNum = row.insertCell(0).innerHTML = input;
+          var cellNum = row.insertCell(0).innerHTML = input.value;
           var cellQuantity = row.insertCell(1).innerHTML = 1;
+
+          input.focus();
+          input.value = "";
 
           // se c'è almeno una riga con dei numeri allora mostra la tabella e il bottone rimuovi 
           if (i == 1) {
@@ -128,6 +133,8 @@
             // se la quantità di un numero è 0 allora toglie la riga dalla tabella
             if (cellQua.innerHTML == 0)
               table.rows[j].remove();
+            input.focus();
+            input.value = "";
           }
         }
 
