@@ -2,155 +2,155 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sushi Ordination</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushi Ordination</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- MAIN CON TABELLA -->
-    <main>
-        <header>
-            <div class="container-title">
-                <p class="title">Sushi <br> Ordination</p>
-            </div>
-        </header>
+  <!-- MAIN CON TABELLA -->
+  <main>
+    <header>
+      <div class="container-title">
+        <p class="title">Sushi <br> Ordination</p>
+      </div>
+    </header>
 
-        <div id="container-table" class="container-table">
-            <table id="table">
-                <tr>
-                    <th>NUMERO</th>
-                    <th>QUANTITÀ</th>
-                </tr>
-            </table>
-        </div>
-
-        <!-- aggiunge uno sapzio della stessa dimensione dell'area bottoni -->
-        <div class="space-bottom"></div>
-    </main>
-
-    <!-- AREA BOTTONI -->
-    <div class="section-container-buttons">
-        <div id="container-buttons" class="container-buttons">
-            <div id="container-input" class="container-input">
-                <input type="number" id="text" placeholder="Numero">
-            </div>
-            <div id="container-btn-add" class="container-btn-add">
-                <button id="btn-add" class="btn-add" type="button" onclick="aggiungi()">Aggiungi</button>
-            </div>
-            <div id="container-btn-rem" class="container-btn-rem">
-                <button class="btn-rem" type="button" onclick="elimina()">Rimuovi</button>
-            </div>
-        </div>
+    <div id="container-table" class="container-table">
+      <table id="table">
+        <tr>
+          <th>Numero</th>
+          <th>Quantità</th>
+        </tr>
+      </table>
     </div>
 
-    <script>
-        // controlla che input abbia strettamente un numero al suo interno
-        function checkText() {
-            var input = document.getElementById("text");
-            if (input.value != "") {
-                if (input.value <= 0)
-                    alert("Il numero deve essere maggiore di 0");
-                else
-                    return 1;
-            }
-            else {
-                alert("Inserisci un numero 😬");
-                input.focus();
-                input.value = "";
-                return 0;
-            }
+    <!-- aggiunge uno sapzio della stessa dimensione dell'area bottoni -->
+    <div class="space-bottom"></div>
+  </main>
+
+  <!-- AREA BOTTONI -->
+  <div class="section-container-buttons">
+    <div id="container-buttons" class="container-buttons">
+
+      <div id="container-btn-add" class="container-btn-add">
+        <button id="btn-add" class="btn-add" type="button" onclick="aggiungi()">Aggiungi</button>
+      </div>
+      <div id="container-input" class="container-input">
+        <input type="number" id="text" placeholder="Numero">
+      </div>
+      <div id="container-btn-rem" class="container-btn-rem hide">
+        <button class="btn-rem" type="button" onclick="elimina()">Rimuovi</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // controlla che input abbia strettamente un numero al suo interno
+    function checkText() {
+      var input = document.getElementById("text");
+      if (input.value != "") {
+        if (input.value <= 0)
+          alert("Il numero deve essere maggiore di 0");
+        else
+          return 1;
+      }
+      else {
+        alert("Inserisci un numero 😬");
+        input.focus();
+        input.value = "";
+        return 0;
+      }
+    }
+
+    // SE il numero non è già nella tabella aggiunge una nuova riga
+    // ALTRIMENTI incrementa la quantità
+    function aggiungi() {
+      if (checkText()) {
+        var table = document.getElementById("table");
+        var input = document.getElementById("text").value;
+        var check = false;
+
+        // controlla che il numero sia nella tabella per incrementarlo altrimenti esce e lo aggiunge alla tabella
+        for (var j = 1; j < table.rows.length; j++) {
+          var cellNum = table.rows[j].cells[0]; // preleva il numero dalla tabella
+          var cellQua = table.rows[j].cells[1]; // preleva la quantità dalla tabella
+
+          if (cellNum.innerHTML == input) {
+            ++cellQua.innerHTML;
+            check = true;
+          }
         }
 
-        // SE il numero non è già nella tabella aggiunge una nuova riga
-        // ALTRIMENTI incrementa la quantità
-        function aggiungi() {
-            if (checkText()) {
-                var table = document.getElementById("table");
-                var input = document.getElementById("text").value;
-                var check = false;
+        // aggiunge in tabella una nuova riga con i nuovi dati
+        if (!check) {
+          var i = table.rows.length; // preleva il numero di righe della tabella
+          var row = table.insertRow(i);
+          var cellNum = row.insertCell(0).innerHTML = input;
+          var cellQuantity = row.insertCell(1).innerHTML = 1;
 
-                // controlla che il numero sia nella tabella per incrementarlo altrimenti esce e lo aggiunge alla tabella
-                for (var j = 1; j < table.rows.length; j++) {
-                    var cellNum = table.rows[j].cells[0]; // preleva il numero dalla tabella
-                    var cellQua = table.rows[j].cells[1]; // preleva la quantità dalla tabella
+          // se c'è almeno una riga con dei numeri allora mostra la tabella e il bottone rimuovi 
+          if (i == 1) {
+            //mostro la tabella e il bottone rimuovi se esiste almeno una riga + gestione animazione con timer
+            setTimeout(() => {
+              document.getElementById("container-btn-rem").classList.add("show"); // mostra btn-rem
+              document.getElementById("container-btn-rem").classList.remove("hide");
+            }, 300);
+            // animazione bottoni
+            document.getElementById("container-btn-add").style.width = "calc(100%/3)";
+            document.getElementById("container-input").style.width = "calc(100%/3)";
+          }
+        }
+      }
+    }
 
-                    if (cellNum.innerHTML == input) {
-                        ++cellQua.innerHTML;
-                        check = true;
-                    }
-                }
+    // SE il numero è nella tabella decrementa la quantità di 1 
+    // SE la quantità = 0 nasconde la tabella e il tasto rimuovi
+    function elimina() {
+      if (checkText()) {
+        var table = document.getElementById("table");
+        var input = document.getElementById("text");
+        var check = false;
 
-                // aggiunge in tabella una nuova riga con i nuovi dati
-                if (!check) {
-                    var i = table.rows.length; // preleva il numero di righe della tabella
-                    var row = table.insertRow(i);
-                    var cellNum = row.insertCell(0).innerHTML = input;
-                    var cellQuantity = row.insertCell(1).innerHTML = 1;
+        // cerca se il numero è presente nella tabella 
+        for (var j = 1; j < table.rows.length; j++) {
+          var cellNum = table.rows[j].cells[0];
+          var cellQua = table.rows[j].cells[1];
 
-                    // se c'è almeno una riga con dei numeri allora mostra la tabella e il bottone rimuovi 
-                    if (i == 1) {
-                        //mostro la tabella e il bottone rimuovi se esiste almeno una riga + gestione animazione con timer
-                        // document.getElementById("container-table").classList.add("show");
-                        setTimeout(() => {
-                            document.getElementById("container-btn-rem").classList.add("show"); // mostra btn-rem
-                        }, 300);
-                        // animazione bottoni
-                        document.getElementById("container-btn-add").style.width = "calc(100%/3)";
-                        document.getElementById("container-input").style.width = "calc(100%/3)";
-                        // document.getElementById("container-buttons").style.width = "90%";
-                    }
-                }
-            }
+          // se è presente decrementa la quantità
+          if (cellNum.innerHTML == input.value) {
+            check = true;
+            --cellQua.innerHTML;
+            // se la quantità di un numero è 0 allora toglie la riga dalla tabella
+            if (cellQua.innerHTML == 0)
+              table.rows[j].remove();
+          }
         }
 
-        // SE il numero è nella tabella decrementa la quantità di 1 
-        // SE la quantità = 0 nasconde la tabella e il tasto rimuovi
-        function elimina() {
-            if (checkText()) {
-                var table = document.getElementById("table");
-                var input = document.getElementById("text");
-                var check = false;
-
-                // cerca se il numero è presente nella tabella 
-                for (var j = 1; j < table.rows.length; j++) {
-                    var cellNum = table.rows[j].cells[0];
-                    var cellQua = table.rows[j].cells[1];
-
-                    // se è presente decrementa la quantità
-                    if (cellNum.innerHTML == input.value) {
-                        check = true;
-                        --cellQua.innerHTML;
-                        // se la quantità di un numero è 0 allora toglie la riga dalla tabella
-                        if (cellQua.innerHTML == 0)
-                            table.rows[j].remove();
-                    }
-                }
-
-                if (!check) {
-                    alert("Numero non presente nella tabella 🤷🏻‍♂️");
-                    input.focus();
-                    input.value = "";
-                }
-
-                // se non ci sono più elementi nella tabella, nasconde sia la tabella che il tasto rimuovi
-                var i = table.rows.length;
-                if (i == 1) {
-                    // nascondo la tabella e il bottone rimuovi se non esiste nessun elemento nella tabella
-                    // document.getElementById("container-table").classList.remove("show")
-                    document.getElementById("container-btn-rem").classList.remove("show");
-                    setTimeout(() => {
-                        document.getElementById("container-btn-add").style.width = "calc(100%/2)";
-                        document.getElementById("container-input").style.width = "calc(100%/2)";
-                        // document.getElementById("container-buttons").style.width = "60%";
-                    }, 300);
-                }
-            }
+        if (!check) {
+          alert("Numero non presente nella tabella 🤷🏻‍♂️");
+          input.focus();
+          input.value = "";
         }
-    </script>
+
+        // se non ci sono più elementi nella tabella, nasconde sia la tabella che il tasto rimuovi
+        var i = table.rows.length;
+        if (i == 1) {
+          // nascondo la tabella e il bottone rimuovi se non esiste nessun elemento nella tabella
+          document.getElementById("container-btn-rem").classList.remove("show");
+          document.getElementById("container-btn-rem").classList.add("hide");
+          setTimeout(() => {
+            document.getElementById("container-btn-add").style.width = "calc(100%/2)";
+            document.getElementById("container-input").style.width = "calc(100%/2)";
+          }, 300);
+        }
+      }
+    }
+  </script>
 
 </body>
 
