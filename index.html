@@ -50,6 +50,13 @@
   </div>
 
   <script>
+    // aggiunge :active al touchscreen
+    window.onload = function () {
+      if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
+        document.body.addEventListener('touchstart', function () { }, false);
+      }
+    }
+
     // controlla che input abbia strettamente un numero al suo interno
     function checkText() {
       var input = document.getElementById("text");
