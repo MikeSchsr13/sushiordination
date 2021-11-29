@@ -22,10 +22,16 @@
 		border: solid 1px #D1D5DB;
 	}
 	.btn-add {
-		background: #5eead4;
+		background: #99F6E4;
+	}
+	.btn-add:active{
+		background-color: #5EEAD4;
 	}
 	.btn-rem {
-		background-color: #f87171;
+		background-color: #FCA5A5;
+	}
+	.btn-rem:active{
+		background-color: #F87171;
 	}
 }
 @media (prefers-color-scheme: dark) {
@@ -49,9 +55,15 @@
 		border: solid 1px #6b7280;
 	}
 	.btn-add {
-		background: #115e59;
+		background: #0F766E;
 	}
 	.btn-rem {
+		background-color: #B91C1C;
+	}
+	.btn-add:active {
+		background: #115e59;
+	}
+	.btn-rem:active {
 		background-color: #991b1b;
 	}
 }
@@ -177,6 +189,14 @@ input,
 	font-size: 11px;
 	text-align: center;
 	border: none;
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+	transition: 100ms;
+}
+
+.btn-add:active,
+.btn-rem:active {
+	box-shadow: none;
+	transform: translate(-50%, -50%) scale(0.9);
 }
 
 .show {
