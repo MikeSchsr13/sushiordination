@@ -245,10 +245,10 @@ input:active {
 }
 
 .check {
-	animation: shake 0.2s;
+	/* animation: shake 0.2s; */
 
 	/* ripetizione */
-	animation-iteration-count: 2;
+	/* animation-iteration-count: 2; */
 }
 
 @keyframes shake {
