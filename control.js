@@ -27,6 +27,7 @@ function aggiungi() {
 	var container_input = document.getElementById('container-input');
 	var container_btn_rem = document.getElementById('container-btn-rem');
 	var container_btn_add = document.getElementById('container-btn-add');
+	var container_table = document.getElementById('container-table');
 
 	if (checkText()) {
 		input.classList.remove('check');
@@ -61,14 +62,15 @@ function aggiungi() {
 			if (i == 1) {
 				//mostro la tabella e il bottone rimuovi se esiste almeno una riga + gestione animazione con timer
 				setTimeout(() => {
-					container_btn_rem.classList.add('show'); // mostra btn-rem
-					container_btn_rem.classList.remove('hide');
+					// container_btn_rem.classList.add('show');
+					container_btn_rem.classList.remove('container-btn-hidden');
 				}, 300);
 				// animazione bottoni
 				container_btn_add.style.width = 'calc(100%/3)';
 				container_input.style.width = 'calc(100%/3)';
 			}
 		}
+		container_table.classList.remove("container-table-hidden");
 	}
 }
 
@@ -80,6 +82,7 @@ function elimina() {
 	var container_input = document.getElementById('container-input');
 	var container_btn_rem = document.getElementById('container-btn-rem');
 	var container_btn_add = document.getElementById('container-btn-add');
+	var container_table = document.getElementById('container-table');
 
 	if (checkText()) {
 		input.classList.remove('check');
@@ -115,8 +118,9 @@ function elimina() {
 		var i = table.rows.length;
 		if (i == 1) {
 			// nascondo la tabella e il bottone rimuovi se non esiste nessun elemento nella tabella
-			container_btn_rem.classList.remove('show');
-			container_btn_rem.classList.add('hide');
+			// container_btn_rem.classList.remove('show');
+			container_btn_rem.classList.add('container-btn-hidden');
+			container_table.classList.add("container-table-hidden");
 			setTimeout(() => {
 				container_btn_add.style.width = 'calc(100%/2)';
 				container_input.style.width = 'calc(100%/2)';
