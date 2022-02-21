@@ -185,6 +185,7 @@ td {
 	border-bottom: none;
 	border-left: none;
 	border-right: none;
+	display: block;
 }
 
 .container-input,
