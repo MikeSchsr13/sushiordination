@@ -239,8 +239,7 @@ input,
 }
 
 .btn-add:active,
-.btn-rem:active,
-input:active {
+.btn-rem:active:active {
 	box-shadow: none;
 	transform: translate(-50%, -50%) scale(0.9);
 }
