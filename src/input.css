@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    th,td{
+        padding: 20px 0px 20px 0px;
+	    font-weight: normal;
+        text-align: center;
+    }
+}
