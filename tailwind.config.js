@@ -1,6 +1,6 @@
 module.exports = {
   mode: "jit",
-  content: ["./src/**/*.{html,js}","./public/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js}","./**/*.{html,js}"],
   theme: {
     extend: {
       letterSpacing:{
