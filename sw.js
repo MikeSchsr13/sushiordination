@@ -1,6 +1,6 @@
 const CACHE = "pwabuilder-precache";
 //Utilizzeremo il Service Worker in modalità Cache-first
-const precacheFiles = ["index.html", "manifest.json", "sw.js","style.css", "favicon.ico"];
+const precacheFiles = ["index.html", "manifest.json", "sw.js","style.css", "favicon.ico","app_icon/icon.png"];
 //In quest’array mettiamo tutti I file che devono essere salvati
 //nella cache locale per permettere la navigazione offline.
 //Essendo file di piccole dimensioni, non mi preoccupo del peso e

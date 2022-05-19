@@ -1,13 +1,17 @@
 {
-	"dir": "ltr",
-	"lang": "Italian",
-	"name": "PWA prova di navigazione offline",
-	"scope": "/",
-	"display": "standalone",
-	"start_url": "https://mikeschsr13.github.io/sushiordination/pwa/",
-	"short_name": "PWA Offline",
-	"theme_color": "#ee0000",
-	"description": "Un test su come far funzionare la navigazione offline di una PWA",
-	"orientation": "any",
-	"background_color": "#ffffff"
-}
+    "name": "js13kGames Progressive Web App",
+    "short_name": "js13kPWA",
+    "description": "Progressive Web App that lists games submitted to the A-Frame category in the js13kGames 2017 competition.",
+    "icons": [
+      {
+        "src": "app_icon/icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/index.html",
+    "display": "fullscreen",
+    "theme_color": "#B12A34",
+    "background_color": "#B12A34"
+  }
+  
