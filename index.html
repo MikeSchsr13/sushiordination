@@ -11,7 +11,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+  <link rel=”apple-touch-icon”>
   <script src="controls.js"></script>
+
+  <script type="text/javascript">
+    // Verifichiamo se il browser con cui l’utente sta navigando è
+    //ha già attivo un Service Worker
+    if ("serviceWorker" in navigator) {
+      if (navigator.serviceWorker.controller) {
+        console.log("Service Worker attivo trovato. Nessuna necessità di registrarne uno.");
+      } else {
+        // Registriamo il Service Worker se non attivo
+        navigator.serviceWorker.register("sw.js", {
+          scope: "./"
+        })
+          .then(function (reg) {
+            console.log("Un nuovo Service Worker registrato per lo scope: " + reg.scope);
+          });
+      }
+    }
+  </script>
 </head>
 
 <body class='text-base bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 font-Inter'>
@@ -70,41 +89,6 @@
       </svg>
     </button>
   </footer>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      // Path che contiene il service worker
-      navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
-        console.log('Service worker installato correttamente, ecco lo scope:', registration.scope);
-      }).catch(function (error) {
-        console.log('Installazione service worker fallita:', error);
-      });
-    }
-
-    var networkDataReceived = false;
-    var risorsa = '/data.json';
-    startSpinner();
-    // Richiesta di rete (intercettata dal service worker)
-    var networkUpdate = fetch(risorsa).then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      networkDataReceived = true;
-      updatePage();
-    });
-    // Richiesta dalla cache
-    caches.match(risorsa).then(function (response) {
-      if (!response) throw Error("No data");
-      return response.json();
-    }).then(function (data) {
-      // Aggiorno la pagina se il contenuto dalla rete non e' stato ancora ricevuto
-      if (!networkDataReceived) {
-        updatePage(data);
-      }
-    }).catch(function () {
-      // Contenuto non presente in cache, attendo quello dalla rete
-      return networkUpdate;
-    }).catch(showErrorMessage).then(stopSpinner);
-  </script>
 
 </body>
 

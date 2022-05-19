@@ -1,15 +1,13 @@
 {
-	"short_name": "Chat",
-	"name": "Chat",
-	"icons": [
-		{
-			"src": "/assets/icon.png",
-			"sizes": "192x192",
-			"type": "image/png"
-		}
-	],
-	"start_url": "/?utm_source=homescreen",
-	"background_color": "#e05a47",
-	"theme_color": "#e05a47",
-	"display": "standalone"
+	"dir": "ltr",
+	"lang": "Italian",
+	"name": "PWA prova di navigazione offline",
+	"scope": "/",
+	"display": "standalone",
+	"start_url": "https://mikeschsr13.github.io/sushiordination/pwa/",
+	"short_name": "PWA Offline",
+	"theme_color": "#ee0000",
+	"description": "Un test su come far funzionare la navigazione offline di una PWA",
+	"orientation": "any",
+	"background_color": "#ffffff"
 }
