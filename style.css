@@ -719,8 +719,8 @@ th,td{
   height: 2.5rem;
 }
 
-.h-24 {
-  height: 6rem;
+.h-28 {
+  height: 7rem;
 }
 
 .h-\[calc\(100\%-theme\(\'spacing\.1\'\)\)\] {
@@ -729,10 +729,6 @@ th,td{
 
 .h-\[calc\(100\%-theme\(\"spacing\.1\"\)\)\] {
   height: calc(100% - 0.25rem);
-}
-
-.h-28 {
-  height: 7rem;
 }
 
 .w-screen {
