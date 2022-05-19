@@ -73,20 +73,37 @@
 
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('service-worker.js').then(function (registration) {
-          // Registration was successful
-          console.log('Registered!');
-        }, function (err) {
-          // registration failed :(
-          console.log('ServiceWorker registration failed: ', err);
-        }).catch(function (err) {
-          console.log(err);
-        });
+      // Path che contiene il service worker
+      navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+        console.log('Service worker installato correttamente, ecco lo scope:', registration.scope);
+      }).catch(function (error) {
+        console.log('Installazione service worker fallita:', error);
       });
-    } else {
-      console.log('service worker is not supported');
     }
+
+    var networkDataReceived = false;
+    var risorsa = '/data.json';
+    startSpinner();
+    // Richiesta di rete (intercettata dal service worker)
+    var networkUpdate = fetch(risorsa).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      networkDataReceived = true;
+      updatePage();
+    });
+    // Richiesta dalla cache
+    caches.match(risorsa).then(function (response) {
+      if (!response) throw Error("No data");
+      return response.json();
+    }).then(function (data) {
+      // Aggiorno la pagina se il contenuto dalla rete non e' stato ancora ricevuto
+      if (!networkDataReceived) {
+        updatePage(data);
+      }
+    }).catch(function () {
+      // Contenuto non presente in cache, attendo quello dalla rete
+      return networkUpdate;
+    }).catch(showErrorMessage).then(stopSpinner);
   </script>
 
 </body>
