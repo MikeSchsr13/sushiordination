@@ -6,7 +6,7 @@ window.onload = function() {
 
     //controlla localstorage
     if (localStorage.table)
-      document.querySelector('#table').innerHTML = localStorage.table;
+		document.querySelector('#table').innerHTML = localStorage.table;
 };
 
 //svuota localstorage
