@@ -4,12 +4,14 @@
     "description": "",
     "icons": [
       {
-        "src": "app_icon/icon.png",
+        "src": "icons/icon.png",
         "sizes": "512x512",
         "type": "image/png"
       }
     ],
     "start_url": "/sushiordination/",
-    "display": "fullscreen"
+    "display": "fullscreen",
+    "theme_color": "#18181B",
+    "background_color": "#18181B"
   }
   
