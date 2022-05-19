@@ -1,7 +1,7 @@
 {
     "name": "Sushi Ordination",
     "short_name": "SO",
-    "description": "Progressive Web App that lists games submitted to the A-Frame category in the js13kGames 2017 competition.",
+    "description": "",
     "icons": [
       {
         "src": "app_icon/icon.png",
