@@ -23,7 +23,7 @@
                 console.log("Service Worker attivo trovato. Nessuna necessità di registrarne uno.");
             } else {
                 // Registriamo il Service Worker se non attivo
-                navigator.serviceWorker.register("service_worker.js", {
+                navigator.serviceWorker.register("sw.js", {
                     scope: "./"
                 })
                     .then(function (reg) {
