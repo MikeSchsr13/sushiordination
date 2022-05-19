@@ -731,6 +731,10 @@ th,td{
   height: calc(100% - 0.25rem);
 }
 
+.h-28 {
+  height: 7rem;
+}
+
 .w-screen {
   width: 100vw;
 }
