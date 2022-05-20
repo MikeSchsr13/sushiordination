@@ -15,23 +15,6 @@
     <link rel="shortcut icon" href="icons/favicon.png" />
     <link rel="manifest" href="manifest.json">
     <script src="controls.js"></script>
-    <script type="text/javascript">
-        // Verifichiamo se il browser con cui l’utente sta navigando è
-        //ha già attivo un Service Worker
-        if ("serviceWorker" in navigator) {
-            if (navigator.serviceWorker.controller) {
-                console.log("Service Worker attivo trovato. Nessuna necessità di registrarne uno.");
-            } else {
-                // Registriamo il Service Worker se non attivo
-                navigator.serviceWorker.register("sw.js", {
-                    scope: "./"
-                })
-                    .then(function (reg) {
-                        console.log("Un nuovo Service Worker registrato per lo scope: " + reg.scope);
-                    });
-            }
-        }
-    </script>
 </head>
 
 <body class='text-base bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 font-Inter'>
@@ -92,6 +75,24 @@
             </svg>
         </button>
     </footer>
+
+    <script type="text/javascript">
+        // Verifichiamo se il browser con cui l’utente sta navigando è
+        //ha già attivo un Service Worker
+        if ("serviceWorker" in navigator) {
+            if (navigator.serviceWorker.controller) {
+                console.log("Service Worker attivo trovato. Nessuna necessità di registrarne uno.");
+            } else {
+                // Registriamo il Service Worker se non attivo
+                navigator.serviceWorker.register("sw.js", {
+                    scope: "./"
+                })
+                    .then(function (reg) {
+                        console.log("Un nuovo Service Worker registrato per lo scope: " + reg.scope);
+                    });
+            }
+        }
+    </script>
 
 </body>
 
