@@ -1,13 +1,10 @@
-// aggiunge :active al touchscreen
-window.onload = function() {
-	if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
-		document.body.addEventListener('touchstart', function() {}, false);
-	}
-
-    //controlla localstorage
-    if (localStorage.table)
+//controlla localstorage
+function checkLocalStorage(){
+	if (localStorage.table){
 		document.querySelector('#table').innerHTML = localStorage.table;
-};
+		document.getElementById("btn-elimina-tabella").style.display = "block";
+	}
+}
 
 //svuota localstorage
 function deleteTable(){
@@ -64,6 +61,8 @@ function aggiungi() {
 			input.value = '';
 		}
         localStorage.table = document.querySelector('#table').innerHTML.trim()
+
+		checkLocalStorage();
 	}
     
 }
@@ -103,5 +102,8 @@ function elimina() {
 		}
 
         localStorage.table = document.querySelector('#table').innerHTML.trim();
+
+		if(table.rows.length == 1)
+			deleteTable();
 	}
 }

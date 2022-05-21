@@ -37,7 +37,7 @@
 
         <!-- TASTO ELIMINA TABELLE -->
         <footer class='w-screen h-32 grid place-content-center'>
-            <button id="btn-elimina-tabella" class='active:scale-75 rounded-full transition-all '
+            <button id="btn-elimina-tabella" class='active:scale-75 rounded-full transition-all hidden'
                 onclick="deleteTable()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 fill-red-400" viewBox="0 0 20 20"
                     fill="currentColor">
@@ -92,6 +92,15 @@
                     });
             }
         }
+
+        // aggiunge :active al touchscreen
+        window.onload = function () {
+            if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
+                document.body.addEventListener('touchstart', function () { }, false);
+            }
+
+            checkLocalStorage();
+        };
     </script>
 
 </body>
