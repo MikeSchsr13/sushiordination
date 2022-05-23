@@ -1,3 +1,4 @@
+const timestamp = 1649406365635;
 const CACHE = 'pwabuilder-precache';
 //Utilizzeremo il Service Worker in modalità Cache-first
 const precacheFiles = [
