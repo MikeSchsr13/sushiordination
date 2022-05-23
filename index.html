@@ -17,7 +17,7 @@
     <script src="controls.js"></script>
 </head>
 
-<body class='text-base bg-white text-black font-Inter scroll-smooth'>
+<body class='text-base bg-white text-black dark:bg-black dark:text-white font-Inter scroll-smooth'>
 
     <main>
         <!-- HEADER -->
@@ -27,7 +27,7 @@
 
         <!-- TABLE -->
         <div class="grid place-content-center p-4 w-screen">
-            <div class="w-60 rounded-3xl bg-teal-100">
+            <div class="w-64 rounded-3xl bg-teal-100 dark:bg-zinc-900">
                 <table id="table" class='w-full table-fixed'>
                     <tr>
                         <th>Numero</th>
@@ -53,17 +53,19 @@
     </main>
 
     <!-- CONTENITORE PULSANTI -->
-    <footer class='bg-white w-screen h-28 fixed bottom-0 grid grid-cols-3 gap4 place-items-center'>
-        <button id="rimuovi" onclick="elimina()" class='p-4 rounded-full active:bg-zinc-200 transition-all'>
+    <footer class='bg-white dark:bg-black w-screen h-28 fixed bottom-0 grid grid-cols-3 gap4 place-items-center'>
+        <button id="rimuovi" onclick="elimina()"
+            class='p-4 rounded-full active:bg-zinc-200 dark:active:bg-zinc-900 transition-all'>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
             </svg>
         </button>
 
         <input type="number" name="" id="text" placeholder="Numero"
-            class='w-24 p-4 bg-transparent border-2 border-zinc-200 outline-none rounded-full transition-all'>
+            class='w-24 p-4 bg-transparent border-2 border-zinc-200 dark:border-zinc-900 outline-none rounded-full transition-all'>
 
-        <button id="aggiungi" onclick="aggiungi()" class='p-4 rounded-full active:bg-zinc-200 transition-all'>
+        <button id="aggiungi" onclick="aggiungi()"
+            class='p-4 rounded-full active:bg-zinc-200 dark:active:bg-zinc-900 transition-all'>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd"
                     d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"

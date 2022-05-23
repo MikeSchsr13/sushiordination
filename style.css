@@ -783,6 +783,10 @@ th,td{
   width: 66.666667%;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -2009,6 +2013,22 @@ th,td{
   font-weight: 100;
 }
 
+.font-light {
+  font-weight: 300;
+}
+
+.font-extralight {
+  font-weight: 200;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -2351,6 +2371,11 @@ th,td{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.drop-shadow-sm {
+  --tw-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .grayscale {
   --tw-grayscale: grayscale(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -2542,9 +2567,23 @@ th,td{
 }
 
 @media (prefers-color-scheme: dark) {
+  .dark\:border-2 {
+    border-width: 2px;
+  }
+
   .dark\:border-zinc-700 {
     --tw-border-opacity: 1;
     border-color: rgb(63 63 70 / var(--tw-border-opacity));
+  }
+
+  .dark\:border-zinc-800 {
+    --tw-border-opacity: 1;
+    border-color: rgb(39 39 42 / var(--tw-border-opacity));
+  }
+
+  .dark\:border-zinc-900 {
+    --tw-border-opacity: 1;
+    border-color: rgb(24 24 27 / var(--tw-border-opacity));
   }
 
   .dark\:bg-zinc-900 {
@@ -2557,6 +2596,11 @@ th,td{
     background-color: rgb(39 39 42 / var(--tw-bg-opacity));
   }
 
+  .dark\:bg-black {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  }
+
   .dark\:fill-zinc-50 {
     fill: #fafafa;
   }
@@ -2566,9 +2610,19 @@ th,td{
     color: rgb(250 250 250 / var(--tw-text-opacity));
   }
 
+  .dark\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
   .dark\:focus\:border-zinc-600:focus {
     --tw-border-opacity: 1;
     border-color: rgb(82 82 91 / var(--tw-border-opacity));
+  }
+
+  .dark\:active\:bg-zinc-900:active {
+    --tw-bg-opacity: 1;
+    background-color: rgb(24 24 27 / var(--tw-bg-opacity));
   }
 }
 
