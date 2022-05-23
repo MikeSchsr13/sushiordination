@@ -6,7 +6,7 @@ const build = [
   "/index.html",
   "/offline.html",
   "/style.css",
-  "/sw.js"c
+  "/sw.js"
 ];
 const files = [
 	'index.html',
