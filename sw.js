@@ -24,19 +24,20 @@ const ASSETS = `cache${timestamp}`;
 const to_cache = build.concat(files);
 const staticAssets = new Set(to_cache);
 
-self.addEventListener('install', function(event) {
-	self.skipWaiting();
-	event.waitUntil(
-		caches.open(CACHE).then(function(cache) {
-			return cache.addAll(precacheFiles);
-		})
-	);
+self.addEventListener("install", (event) => {
+  event.waitUntil(caches.open(ASSETS).then((cache) => cache.addAll(to_cache)).then(() => {
+    self.skipWaiting();
+  }));
 });
 
-//Diamo il permesso al Service Worker di poter avere il controllo
-//della pagina corrente
-self.addEventListener('activate', function(event) {
-	event.waitUntil(self.clients.claim());
+self.addEventListener("activate", (event) => {
+  event.waitUntil(caches.keys().then(async (keys) => {
+    for (const key of keys) {
+      if (key !== ASSETS)
+        await caches.delete(key);
+    }
+    self.clients.claim();
+  }));
 });
 
 async function fetchAndCache(request) {
