@@ -17,17 +17,17 @@
     <script src="controls.js"></script>
 </head>
 
-<body class='text-base bg-white text-black font-Inter'>
+<body class='text-base bg-white text-black font-Inter scroll-smooth'>
 
     <main>
         <!-- HEADER -->
-        <header class='grid w-screen h-32 place-content-center'>
+        <header class='grid w-screen h-36 place-content-center'>
             <p class='text-center text-2xl font-thin tracking-tracking-2em'>Sushi<br>Ordination</p>
         </header>
 
         <!-- TABLE -->
         <div class="grid place-content-center p-4 w-screen">
-            <div class="w-60 rounded-3xl bg-emerald-100">
+            <div class="w-60 rounded-3xl bg-teal-100">
                 <table id="table" class='w-full table-fixed'>
                     <tr>
                         <th>Numero</th>
@@ -53,7 +53,7 @@
     </main>
 
     <!-- CONTENITORE PULSANTI -->
-    <footer class='bg-white w-screen h-28 fixed bottom-0 grid grid-cols-3 gap4 place-items-center rounded-t-3xl'>
+    <footer class='bg-white w-screen h-28 fixed bottom-0 grid grid-cols-3 gap4 place-items-center'>
         <button id="rimuovi" onclick="elimina()" class='p-4 rounded-full active:bg-zinc-200 transition-all'>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
@@ -61,7 +61,7 @@
         </button>
 
         <input type="number" name="" id="text" placeholder="Numero"
-            class='w-24 p-4 bg-white border-2 border-zinc-200 outline-none rounded-full transition-all'>
+            class='w-24 p-4 bg-transparent border-2 border-zinc-200 outline-none rounded-full transition-all'>
 
         <button id="aggiungi" onclick="aggiungi()" class='p-4 rounded-full active:bg-zinc-200 transition-all'>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">

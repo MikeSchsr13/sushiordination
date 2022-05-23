@@ -743,6 +743,10 @@ th,td{
   height: 1.25rem;
 }
 
+.h-36 {
+  height: 9rem;
+}
+
 .w-screen {
   width: 100vw;
 }
@@ -773,6 +777,10 @@ th,td{
 
 .w-full {
   width: 100%;
+}
+
+.w-4\/6 {
+  width: 66.666667%;
 }
 
 .flex-shrink {
@@ -1721,6 +1729,31 @@ th,td{
   background-color: rgb(236 253 245 / var(--tw-bg-opacity));
 }
 
+.bg-\[rgb\(194\2c 221\2c 221\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(194 221 221 / var(--tw-bg-opacity));
+}
+
+.bg-\[rgb\(116\2c 144\2c 146\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(116 144 146 / var(--tw-bg-opacity));
+}
+
+.bg-slate-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+}
+
+.bg-emerald-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(167 243 208 / var(--tw-bg-opacity));
+}
+
+.bg-teal-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 251 241 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\.\.\.\'\)\] {
   background-image: url('...');
 }
@@ -1844,6 +1877,14 @@ th,td{
 
 .fill-\[\#bada55\]\/50 {
   fill: rgb(186 218 85 / 0.5);
+}
+
+.fill-zinc-400 {
+  fill: #a1a1aa;
+}
+
+.fill-zinc-200 {
+  fill: #e4e4e7;
 }
 
 .object-contain {
