@@ -1,13 +1,20 @@
 const timestamp = 1649406365635;
 const CACHE = 'pwabuilder-precache';
 //Utilizzeremo il Service Worker in modalità Cache-first
+const build = [
+  "/controls.js",
+  "/index.html",
+  "/offline.html",
+  "/style.css",
+  "/sw.js",
+];
 const files = [
 	'index.html',
 	'manifest.json',
 	'sw.js',
 	'style.css',
-	'./icons/favicon.png',
-	'./icons/icon.png'
+	'/icons/favicon.png',
+	'/icons/icon.png'
 ];
 //In quest’array mettiamo tutti I file che devono essere salvati
 //nella cache locale per permettere la navigazione offline.
