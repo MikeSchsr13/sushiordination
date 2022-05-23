@@ -17,7 +17,7 @@
     <script src="controls.js"></script>
 </head>
 
-<body class='text-base bg-white text-black font-Inter'>
+<body class='text-base bg-[#fff5e0] text-black font-Inter'>
 
     <main>
         <!-- HEADER -->
@@ -27,7 +27,7 @@
 
         <!-- TABLE -->
         <div class="grid place-content-center p-4 w-screen">
-            <table id="table" class='bg-[rgb(219,240,227)] w-64 table-fixed rounded-3xl '>
+            <table id="table" class='bg-[#ffdbc3] w-60 table-fixed rounded-3xl '>
                 <tr>
                     <th>Numero</th>
                     <th>Quantità</th>
@@ -51,10 +51,9 @@
     </main>
 
     <!-- CONTENITORE PULSANTI -->
-    <footer class='w-screen h-28 bg-white fixed bottom-0 grid grid-cols-3 gap-4 place-items-center'>
+    <footer class='w-screen h-28 bg-[#fff5e0] fixed bottom-0 grid grid-cols-3 gap-4 place-items-center'>
 
-        <button id="rimuovi" onclick="elimina()"
-            class='bg-transparent p-3 rounded-full active:border-2 active:border-neutral-100 transition-all'>
+        <button id="rimuovi" onclick="elimina()" class='p-2 rounded-full active:bg-[#ee9e8e] transition-all'>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -64,11 +63,10 @@
         <input type="number" name="" id="text" placeholder="Numero"
             class='w-24 p-4 border-none bg-black outline-none rounded-full transition-all text-white'>
 
-        <button id="aggiungi" onclick="aggiungi()"
-            class='bg-transparent p-3 rounded-full active:border-2 active:border-neutral-100 transition-all'>
+        <button id="aggiungi" onclick="aggiungi()" class=' p-2 rounded-full active:bg-[#ee9e8e] transition-all'>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
         </button>
     </footer>
