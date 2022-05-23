@@ -1,7 +1,7 @@
 const timestamp = 1649406365635;
 const CACHE = 'pwabuilder-precache';
 //Utilizzeremo il Service Worker in modalità Cache-first
-const precacheFiles = [
+const files = [
 	'index.html',
 	'manifest.json',
 	'sw.js',
@@ -13,6 +13,9 @@ const precacheFiles = [
 //nella cache locale per permettere la navigazione offline.
 //Essendo file di piccole dimensioni, non mi preoccupo del peso e
 //li carico tutti in cache.
+const ASSETS = `cache${timestamp}`;
+const to_cache = build.concat(files);
+const staticAssets = new Set(to_cache);
 
 self.addEventListener('install', function(event) {
 	self.skipWaiting();
