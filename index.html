@@ -17,7 +17,7 @@
     <script src="controls.js"></script>
 </head>
 
-<body class='text-base bg-zinc-50 text-black font-Inter'>
+<body class='text-base bg-white text-black font-Inter'>
 
     <main>
         <!-- HEADER -->
@@ -27,12 +27,14 @@
 
         <!-- TABLE -->
         <div class="grid place-content-center p-4 w-screen">
-            <table id="table" class='bg-white drop-shadow-2xl w-60 table-fixed rounded-3xl '>
-                <tr>
-                    <th>Numero</th>
-                    <th>Quantità</th>
-                </tr>
-            </table>
+            <div class="w-60 rounded-3xl bg-emerald-100">
+                <table id="table" class='w-full table-fixed'>
+                    <tr>
+                        <th>Numero</th>
+                        <th>Quantità</th>
+                    </tr>
+                </table>
+            </div>
         </div>
 
         <!-- TASTO ELIMINA TABELLE -->
@@ -51,28 +53,23 @@
     </main>
 
     <!-- CONTENITORE PULSANTI -->
-    <footer class='w-screen h-28 fixed bottom-0 grid place-items-center'>
-        <div class='w-4/5 h-20 bg-zinc-900 grid grid-cols-3 gap-4 place-items-center rounded-3xl'>
-            <button id="rimuovi" onclick="elimina()" class='p-4 rounded-full active:bg-zinc-700 transition-all'>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-zinc-50" viewBox="0 0 20 20"
-                    fill="currentColor">
-                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                        clip-rule="evenodd" />
-                </svg>
-            </button>
+    <footer class='bg-white w-screen h-28 fixed bottom-0 grid grid-cols-3 gap4 place-items-center rounded-t-3xl'>
+        <button id="rimuovi" onclick="elimina()" class='p-4 rounded-full active:bg-zinc-200 transition-all'>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+            </svg>
+        </button>
 
-            <input type="number" name="" id="text" placeholder="Numero"
-                class='w-24 p-4 border-none bg-zinc-800 focus:bg-zinc-700 drop-shadow-md outline-none rounded-full transition-all text-white'>
+        <input type="number" name="" id="text" placeholder="Numero"
+            class='w-24 p-4 bg-white border-2 border-zinc-200 outline-none rounded-full transition-all'>
 
-            <button id="aggiungi" onclick="aggiungi()" class='p-4 rounded-full active:bg-zinc-700 transition-all'>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-zinc-50" viewBox="0 0 20 20"
-                    fill="currentColor">
-                    <path fill-rule="evenodd"
-                        d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
-                        clip-rule="evenodd" />
-                </svg>
-            </button>
-        </div>
+        <button id="aggiungi" onclick="aggiungi()" class='p-4 rounded-full active:bg-zinc-200 transition-all'>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                    clip-rule="evenodd" />
+            </svg>
+        </button>
 
     </footer>
 
