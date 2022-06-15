@@ -7,19 +7,17 @@ module.exports = {
         'tracking-2em': '0.5em',
       },
       fontFamily:{
-        'Inter': ['Inter','sans-serif']
+        'Inter': ['Inter','sans-serif'],
+        'Comfortaa': ['Comfortaa','cursive']
       },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
         'white': '#ffffff',
-        'purple': '#3f3cbb',
-        'midnight': '#121063',
-        'metal': '#565584',
-        'tahiti': '#3ab7bf',
-        'silver': '#ecebff',
-        'bubble-gum': '#ff77e9',
-        'bermuda': '#78dcca',
+        'white-0.5': 'rgba(255, 255, 255, 0.5)',
+        'white-0.3': 'rgba(255, 255, 255, 0.3)',
+        'rosa': '#ffc2c2',
+        'mandarino': '#ffd7a8',
       },
     },
   },
