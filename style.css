@@ -763,6 +763,10 @@ th,td{
   width: 1.5rem;
 }
 
+.w-28 {
+  width: 7rem;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
