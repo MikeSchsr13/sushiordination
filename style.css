@@ -2602,6 +2602,11 @@ th,td{
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
+.focus\:border-zinc-300:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(212 212 216 / var(--tw-border-opacity));
+}
+
 .focus\:bg-white-0\.5:focus {
   background-color: rgba(255, 255, 255, 0.5);
 }
