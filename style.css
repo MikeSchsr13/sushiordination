@@ -2386,6 +2386,10 @@ th,td{
   text-align: center;
 }
 
+.focus\:border-4:focus {
+  border-width: 4px;
+}
+
 .focus\:border-zinc-300:focus {
   --tw-border-opacity: 1;
   border-color: rgb(212 212 216 / var(--tw-border-opacity));
